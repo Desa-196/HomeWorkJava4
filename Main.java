@@ -11,7 +11,12 @@ import java.util.LinkedList;
 public class Main{
     public static void main(String[] args)
     {
-        System.out.println(generateRandomArrayList(20,10,0));
+        LinkedList<Integer> list = generateRandomArrayList(20,10,0);
+        System.out.println(list);
+
+        System.out.println(reversLinkedList(list));
+
+
     }
 
     public static LinkedList<Integer> generateRandomArrayList(int size, int max, int min) {
@@ -20,5 +25,17 @@ public class Main{
             list.add((int)(Math.random()*(max - min + 1) + min));
         }
         return list;
+    }
+
+
+    public static LinkedList<Integer> reversLinkedList(LinkedList<Integer> list){
+
+        LinkedList<Integer> reversList = new LinkedList<Integer>();
+
+        for (Integer element : list) {
+           reversList.addFirst(element);
+        }
+
+        return reversList;
     }
 }
