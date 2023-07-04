@@ -1,23 +1,23 @@
 import java.util.LinkedList;
 
-public class MyQueue {
-    private LinkedList<Integer> queue = new LinkedList<Integer>();
+public class MyQueue <T> {
+    private LinkedList<T> queue = new LinkedList<T>();
 
     /*помещает элемент в конец очереди */
-    public void enqueue(int element){
+    public void enqueue(T element){
         queue.addLast(element);
     }
     /*возвращает первый элемент из очереди и удаляет его */
-    public Integer dequeue(){
+    public T dequeue(){
         if(queue.size() > 0){
-            int first = queue.getFirst();
+            T first = queue.getFirst();
             queue.removeFirst();
             return first;
         }
         return null;
     }
     /*возвращает первый элемент из очереди, не удаляя */
-    public Integer first(){
+    public T first(){
         if(queue.size() > 0){
             return queue.getFirst();
         }
